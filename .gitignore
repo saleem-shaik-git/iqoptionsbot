@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+.next/
+out/
+coverage/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Runtime
+logs/*.log
+models/*.pt
+models/*.pth
+models/*.pkl
+models/*.joblib
+
+# Docker
+postgres_data/
+redis_data/
+
+# Secrets
+*.pem
+*.key
