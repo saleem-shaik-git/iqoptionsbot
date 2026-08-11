@@ -41,6 +41,19 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  backend-test:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.test
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: ["pytest", "-q", "--cache-dir=/tmp/pytest-cache"]
+
 volumes:
   postgres_data:
   redis_data:
